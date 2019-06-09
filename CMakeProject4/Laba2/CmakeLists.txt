@@ -1,0 +1,4 @@
+project ("Laba2")
+
+# Включите подпроекты.
+add_subdirectory ("Task2.1")
