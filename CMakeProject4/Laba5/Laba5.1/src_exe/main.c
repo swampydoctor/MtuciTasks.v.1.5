@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <func.h>
-#include <locale.h>
 
 void main(void)
 {
-	setlocale(LC_ALL, "Rus");
 	const char str[20];
 	const char substr[20];
 	char dest[] = "";
@@ -24,62 +22,62 @@ void main(void)
 		{
 		case '1':
 			system("cls");
-			printf("Введите вашу строку:\n\r");
+			printf("Input your str:\n\r");
 			gets(str);
-			printf("Длина строки равна: %d\n\r", strlen(str));
+			printf("Strlen is: %d\n\r", strlen(str));
 			break;
 		case '2':
 			system("cls");
-			printf("Введите вашу строку:\n\r");
+			printf("Input your str:\n\r");
 			gets(str);
-			printf("Введите подстроку: \n");
+			printf("Input your substr: \n");
 			gets(substr);
 			char* p = find(str, substr);
 			if (p == 0) {
 				printf("0\n");
 			}
 			else {
-				printf("1, адрес подстроки %p\n", p);
+				printf("1, substr address %p\n", p);
 			}
 			break;
 		case'3':
 			system("cls");
-			printf("Введите строку: \n");
+			printf("Input your str: \n");
 			gets(str);
-			printf("Введите подстроку: \n");
+			printf("Input your substr: \n");
 			gets(substr);
 			delete(str, substr);
-			printf("Новая строка: %s\n", str);
+			printf("New str: %s\n", str);
 			break;
 		case'4':
 			system("cls");
-			printf("Введите строку: \n");
+			printf("Input your str: \n");
 			gets(str);
-			printf("Введите количество символов: \n");
+			printf("Input char amount: \n");
 			scanf_s("%d", &len);
 			strcpy(dest, len, str);
-			printf("Результат = %s\n", dest);
+			printf("Result = %s\n", dest);
 			break;
 		case'5':
 			system("cls");
-			printf("Введите строку: \n");
+			printf("Input your str: \n");
 			gets(str);
-			printf("Введите подстроку: \n");
+			printf("Input your substr: \n");
 			gets(substr);
-			printf("Введите размер буфера: \n");
+			printf("Input buffer size: \n");
 			scanf_s("%d", &lendest);
 			strcat(dest, lendest, str, substr);
-			printf("Результат конкатенации = %s\n", dest);
+			printf("Concatenation result = %s\n", dest);
 			break;
 		case '6':
 			system("cls");
-			printf("Введите строку: \n");
+			printf("Input your str: \n");
 			gets(str);
-			printf("Введите подстроку: \n");
+			printf("Input your substr: \n");
 			gets(substr);
-			printf("Введите размер буфера: \n");
+			printf("Input buffer size: \n");
 			scanf_s("%d", &lendest);
-			printf("Введите индекс: \n");
+			printf("Input index: \n");
 			scanf_s("%d", &index);
 			if (insert(str, substr, index, dest, lendest))
 			{
@@ -87,14 +85,14 @@ void main(void)
 			}
 			else
 			{
-				printf("ERROR: Cумма длин исходной строки и строки для вставки больше размера буфера или индекс находился за пределами строки\n");
+				printf("ERROR: SumofInitialStrAndSubstr is higher than bufferSize or index is beyond the boundaries\n");
 			}
 			break;
 		case '7':
 			exit(0);
 			break;
 		default:
-			printf("Неверный параметр ввода\n\r");
+			printf("Invalid input parameter\n\r");
 			break;
 		}
 		system("pause");
