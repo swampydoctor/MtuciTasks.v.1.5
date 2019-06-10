@@ -7,6 +7,7 @@ int main(void)
 	double x, y;
 	printf("1. Task1\r\n");
 	printf("2. Task2\r\n");
+	printf("3. Exit\n\r");
 	int a = _getch();
 	switch (a)
 	{
@@ -26,6 +27,9 @@ int main(void)
 		printf("Enter x:");
 		scanf_s("%lf", &x);
 		printf("y=%f\n", f(x));
+		break;
+	case '3':
+		exit(0);
 		break;
 	default:
 		printf("Invalid parameter");
